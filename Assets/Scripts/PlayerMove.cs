@@ -2,8 +2,13 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    [SerializeField] private float walkSpeed = 5;
+
     private void Update()
     {
+
+        // Basic AHH movement
+
         Vector3 inputVector = new Vector3(0,0);
 
         if (Input.GetKey(KeyCode.W)){
@@ -22,6 +27,6 @@ public class PlayerMove : MonoBehaviour
             inputVector.x += 1;
         }
 
-        transform.position += inputVector * Time.deltaTime * 5;
+        transform.position += inputVector * Time.deltaTime * walkSpeed;
     }
 }
